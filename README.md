@@ -4,7 +4,7 @@ tf-operator based deployment of tungsten CNI
 ## Roll-Out Operator based installation
 initialise and run tf-operator
 
-<b>Note:</b> Before starting, make sure you have configure hosts file on each node.
+<b>Note:</b> Before starting, make sure you have configured hosts file on each node.
 
 ```
 vim /etc/hosts
