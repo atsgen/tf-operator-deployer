@@ -4,17 +4,8 @@ tf-operator based deployment of tungsten CNI
 ## Roll-Out Operator based installation
 initialise and run tf-operator
 
-<b>Note:</b> Before starting, make sure you have installed kernel headers and configure hosts file on each node.
+<b>Note:</b> Before starting, make sure you have configure hosts file on each node.
 
-Ubuntu
-```
-sudo apt-get install linux-headers-$(uname -r)
-```
-or
-Centos
-```
-sudo yum install kernel-devel-$(uname -r)
-```
 ```
 vim /etc/hosts
 #Add the following lines:
