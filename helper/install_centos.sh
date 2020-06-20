@@ -17,7 +17,7 @@ sudo yum-config-manager \
 sudo yum install -y docker-ce docker-ce-cli containerd.io
 
 sudo yum install -y kernel-devel-$(uname -r)
-sudo yum install iptables
+sudo yum install -y iptables
 sudo yum install -y kubelet kubeadm kubectl
 systemctl enable kubelet
 systemctl start kubelet
@@ -32,5 +32,5 @@ sudo modprobe br_netfilter
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
 
-# setup nodes based on thier roles
-#sudo kubeadm init
+# setup nodes based on their roles
+#sudo kubeadm init --pod-network-cidr 10.32.0.0/12 --service-cidr 10.96.0.0/12
