@@ -4,7 +4,7 @@ tf-operator based deployment of tungsten CNI
 ## Roll-Out Operator based installation
 initialise and run tf-operator
 
-<b>Prelude:</b> It is assumed that the Kubernetes(kubelet kubeadm kubectl) is installed and kernel headers are available on the node. if not, use the scripts available in the helper directory to install Kubernetes and kernel headers. Make sure you have configured hosts file on each node.
+<b>Prelude:</b> It is assumed that the Kubernetes components(kubelet, kubeadm, and kubectl) are already installed and kernel headers are available on the node. If not, use the scripts available in the helper directory to install Kubernetes and kernel headers. Make sure that you have configured the hosts file on each node.
 
 ```
 vim /etc/hosts
@@ -29,12 +29,9 @@ kubectl create -f deploy/005_secret.yaml
 kubectl create -f deploy/006_crd.yaml
 kubectl create -f deploy/operator.yaml
 ```
+tf operator is assumed to enable the tungsten fabric controller on master nodes only and datapath on all the nodes.
 
-tf operator assumes to enable tungsten fabric controller on master nodes only and datapath on all the nodes.
-
-Once everything is ready the cluster can be rolled out using
+Once everything is ready, the cluster can be rolled out using the following command 
 ```
 kubectl create -f deploy/sample_deployment.yaml
 ```
-
-
