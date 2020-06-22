@@ -4,7 +4,7 @@ tf-operator based deployment of tungsten CNI
 ## Roll-Out Operator based installation
 initialise and run tf-operator
 
-<b>Note:</b> Before starting, make sure you have configured hosts file on each node.
+<b>Prelude:</b> It is assumed that the Kubernetes(kubelet kubeadm kubectl) is installed and kernel headers are available on the node. if not, use the scripts available in the helper directory to install Kubernetes and kernel headers. Make sure you have configured hosts file on each node.
 
 ```
 vim /etc/hosts
