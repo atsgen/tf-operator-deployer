@@ -25,17 +25,18 @@ initialise and run tf-operator
 # get container image for operator
 ./get_operator_image.sh
 
-kubectl create -f deploy/001_namespace.yaml
-kubectl create -f deploy/002_service_account.yaml
-kubectl create -f deploy/003_role.yaml
-kubectl create -f deploy/004_role_binding.yaml
+kubectl create -f deploy/tungsten.atsgen.com_sdns_crd.yaml
+
+kubectl create -f deploy/01-tf-namespace.yaml
 # default password set as 'atsgen'
 # user can choose to skip creating secret from here and define
 # there own password using
 # kubectl create secret generic -n atsgen tungsten-auth --from-literal=password='atsgen'
-kubectl create -f deploy/005_secret.yaml
-kubectl create -f deploy/006_crd.yaml
-kubectl create -f deploy/operator.yaml
+kubectl create -f deploy/02-tf-secret.yaml
+kubectl create -f deploy/03-tf-service_account.yaml
+kubectl create -f deploy/04-tf-role.yaml
+kubectl create -f deploy/05-tf-role_binding.yaml
+kubectl create -f deploy/06-tf-operator.yaml
 ```
 
 tf operator automatically assigns tungsten fabric controller role to master nodes and datapath components
@@ -43,7 +44,7 @@ are assigned to all the nodes in the cluster
 
 Once everything is ready, the cluster can be rolled out using the following command
 ```
-kubectl create -f deploy/sample_deployment.yaml
+kubectl create -f deploy/sample-deploy.yaml
 ```
 
 
